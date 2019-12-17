@@ -21,10 +21,10 @@ for ival in inf:
         print("invalid constructor", ival, Float(ival).hex(), float(ival).hex(),
               sep="\t", file=sys.stderr)
 for i in range(1000):
-    base = random.random()
+    base = str(random.random())
     exps = [random.randint(-128, 128), random.randint(-2**11, -128), random.randint(128, 2**10)]
-    pos = list(map(lambda x: base * pow(2.0, x), exps))
-    neg = list(map(lambda x: -x, pos))
+    pos = list(map(lambda x: base + "e" + str(x), exps))
+    neg = list(map(lambda x: "-" + x, pos))
     vals = pos + neg
     for val in vals:
         pval = Float(val).hex() == float(val).hex()
