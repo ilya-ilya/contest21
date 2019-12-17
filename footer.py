@@ -14,11 +14,11 @@ if not passed:
 
 inf = ["Nan", "INF", "-inf", "infINIty"]
 pconstr = []
-for val in inf:
-    pval = Float(val).hex() == float(val).hex()
+for ival in inf:
+    pval = Float(ival).hex() == float(ival).hex()
     pconstr.append(pval)
     if not pval:
-        print("invalid constructor", val, Float(val).hex(), float(val).hex(),
+        print("invalid constructor", ival, Float(ival).hex(), float(ival).hex(),
               sep="\t", file=sys.stderr)
 for i in range(1000):
     base = random.random()
