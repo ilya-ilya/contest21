@@ -1,1 +1,1 @@
-from typing import *
+print("Hello, world!")
