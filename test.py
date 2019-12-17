@@ -63,8 +63,8 @@ for val in inf:
               sep="\t", file=sys.stderr)
 for i in range(1000):
     base = random.random()
-    exps = [random.randint(-128, 128), random.randint(-128, 128), random.randint(-128, 128)]
-    pos = list(map(lambda x: base * pow(2, x), exps))
+    exps = [random.randint(-128, 128), random.randint(-2**11, -128), random.randint(128, 2**10)]
+    pos = list(map(lambda x: base * pow(2.0, x), exps))
     neg = list(map(lambda x: -x, pos))
     vals = pos + neg
     for val in vals:
